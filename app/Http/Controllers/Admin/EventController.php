@@ -28,8 +28,8 @@ class EventController extends Controller
       // dd($request->all());
       Eventlist::create([
 
-        'name'=>$request->Event_name,
-        'User'=>$request->User_name,
+    'name'=>$request->Event_name,
+    'User'=>$request->User_name,
     'status'=>$request->Event_status,
     'Date'=>$request->Event_Date,
     
