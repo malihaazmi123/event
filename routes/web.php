@@ -3,6 +3,7 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\reportController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\user\BookingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/admin', function () {
     return view('welcome');
 });
 Route::get('/Staff',[StaffController::class,'ProductM']);
@@ -37,6 +38,8 @@ Route::get('/event/eventlist', [EventController:: class, 'Evenlist'])->name('eve
 //// website
 
 
-Route::get('/home', function () {
-    return view('website.master');
+Route::get('/', function () {
+    return view('website.content');
 });
+
+Route::get('booking/eventbooking',[BookingController::class,'eventbook'])->name('booking.eventbook');
