@@ -14,7 +14,7 @@
 		<div class="couple-wrap animate-box">
 			<div class="couple-half">
 				<div class="groom">
-					<img src="{{url('frntend/images/groom.jpg')}}" alt="groom" class="img-responsive">
+					<img src="{{url('frontend/images/groom.jpg')}}" alt="groom" class="img-responsive">
 				</div>
 				<div class="desc-groom">
 					<h3>Joefrey Mahusay</h3>

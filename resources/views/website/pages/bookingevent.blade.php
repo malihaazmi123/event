@@ -3,24 +3,28 @@
 <div class="container" style="margin-top:150px;">
     <form  style="color :rgb(10, 10, 10)">
         <fieldset enabled>
-          <legend class="text-center" style="padding-bottom: 12px;">Create Event list</legend>
+          <legend class="text-center" style="padding-bottom: 12px;">Booking Event</legend>
           <div class="mb-3">
-            <label for="EventTextInput" class="form-label">Event name </label>
-        <input name="Event_name" type="text" id="EventTextInput" class="form-control" placeholder="Event name">
+            <label for="EventName" class="form-label">Event Name </label>
+        <input name="Event_name" type="EventTextName" id="EventName" class="form-control" placeholder="Event name">
           </div>
       
           <div class="mb-3">
-            <label for="EventTextInput" class="form-label">User name </label>
-        <input name="User_name" type="text" id="EventTextInput" class="form-control" placeholder="User name">
+            <label for="UserId" class="form-label">User Id</label>
+        <input name="User_Id" type="UserId" id="UserId" class="form-control" placeholder="User Id">
           </div>
           <div class="mb-3">
-            <label for="EventTextInput" class="form-label">Event status </label>
-        <input name="Event_status" type="text" id="EventTextInput" class="form-control" placeholder="Event status">
+            <label for="Email" class="form-label">Email</label>
+        <input name="Email" type="email" id="Email" class="form-control" placeholder="Email">
           </div>
           <div class="mb-3">
-            <label for="EventTextInput" class="form-label"> Event Date</label>
+            <label for="Password" class="form-label">Password</label>
+        <input name="Password" type="Password" id="Password" class="form-control" placeholder="Password">
+          </div>
+          <div class="mb-3">
+            <label for="EventDate" class="form-label"> Event Date</label>
       
-               <input name="Event_Date" type="EventTextInput" id="EventTextInput" class="form-control" placeholder="Event Date">    
+               <input name="Event_Date" type="datetime-local" id="EventDate" class="form-control" placeholder="Event Date">    
                <select id="enabledSelect" class="form-select">
                <option> Event Date</option>
             </select>

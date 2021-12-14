@@ -1,9 +1,10 @@
 <?php
 use App\Http\Controllers\StaffController;
-use App\Http\Controllers\reportController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\user\BookingController;
+use App\Http\Controllers\user\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,14 +25,16 @@ Route::get('/Staff',[StaffController::class,'ProductM']);
 Route::get('/Staff/AddStaff',[StaffController::class,'Addstaff'])->name('staff.Addstaff');
 Route::get('/Staff/Stafflist',[StaffController::class,'StafflistU'])->name('staff.staffList');
 Route::post('/staff/addstaff',[StaffController::class,'staffadd'])->name('staff.post.add');
-Route::get('/report/dailyreport',[reportController::class,'reportM'])->name('profile');
 Route::get('/service',[ServiceController::class,'serviceM']);
-Route::get('/report/weeklyreport',[reportController::class,'weekly'])->name('weekly');
+Route::get('/user',[UserController::class,'userlist'])->name('welcome.user');
 Route::get('/event',[EventController::class,'eventM'])->name('event');
 Route::get('/dashboard/form',[EventController::class,'form'])->name('form');
 Route::get('/admin/accounts',[EventController::class,'accounts'])->name('accountform');
 Route::post('/dashboard/store',[EventController::class,'storeE'])->name('eventlist');
 Route::get('/event/eventlist', [EventController:: class, 'Evenlist'])->name('event.eventlist');
+Route::get('/event/addevent',[EventController::class,'addevent'])->name('event.add');
+Route::get('/event/addlist',[EventController::class,'addlist'])->name('event.addlist');
+Route::post('event/add/event',[EventController::class,'eventaddlist'])->name('event.add.list');
 
 
 
@@ -40,6 +43,9 @@ Route::get('/event/eventlist', [EventController:: class, 'Evenlist'])->name('eve
 
 Route::get('/', function () {
     return view('website.content');
-});
+})->name('frontend');
 
 Route::get('booking/eventbooking',[BookingController::class,'eventbook'])->name('booking.eventbook');
+Route::get('login',[LoginController::class,'logininput'])->name('website.login');
+Route::get('registration',[LoginController::class,'inputregistration'])->name('website.registration');
+Route::post('registration/form',[LoginController::class,'storename'])->name('website.registration.form');

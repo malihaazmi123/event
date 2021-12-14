@@ -20,11 +20,11 @@
     <input name="Email" type="email" class="form-control" id="inputEmail4" placeholder="Email" style="color :black">
   </div>
   <div class="col-12">
-    <label for="inputAddress" class="form-label">Address</label>
+    <label for="inputAddress" class="form-label">Address (Permanent)</label>
     <input name="Permanent_Address" type="text" class="form-control" id="inputAddress" placeholder="Permanent Address" style="color :black">
   </div>
   <div class="col-12">
-    <label for="inputAddress2" class="form-label">Address </label>
+    <label for="inputAddress2" class="form-label">Address(Current) </label>
     <input name="Current_Address" type="text" class="form-control" id="inputAddress2" placeholder="Current Address" style="color :black">
   </div>
   <div class="col-12">

@@ -19,11 +19,10 @@
   <input name="Event_status" type="text" id="EventTextInput" class="form-control" placeholder="Event status">
     </div>
     <div class="mb-3">
-      <label for="EventTextInput" class="form-label"> Event Date</label>
+      <label for="EventDate" class="form-label"> Date</label>
 
-         <input name="Event_Date" type="EventTextInput" id="EventTextInput" class="form-control" placeholder="Event Date">    
+         <input name="Event_Date" type="datetime-local" id="Date" class="form-control" placeholder="Date">    
          <select id="enabledSelect" class="form-select">
-         <option> Event Date</option>
       </select>
     </div>
     <div class="mb-3">

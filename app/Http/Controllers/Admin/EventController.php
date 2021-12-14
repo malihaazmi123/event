@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Models\Eventlist;
+use App\Models\Addeventlist;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -36,5 +37,33 @@ class EventController extends Controller
 ]);
 return redirect()->back();
     }
+    public function addevent(){
+
+        return view('admin.pages.eventaddpic');
+    }
+
+    public function addlist(){
+        $lists = Addeventlist::all();
+        return view('admin.pages.eventaddlist',compact('lists'));
+    }
+
+    public function eventaddlist(Request $request){
+        // dd($request->all());
+        if ($request->hasfile('Imagefile')) {
+            $file=$request->file('Imagefile');
+            $filename=date('Ymdhms').'.'.$file->getClientOriginalExtension();
+            // dd($filename);
+            $file->storeAs('/uploads',$filename);
+
+        }
+        Addeventlist::create([
+         
+        'eventname'=>$request->Event_name,
+        'eventdescripsion'=>$request->eventdescription,
+        'image'=>$filename,
+
+        ]);
+     return redirect()->back();
+  }
     
 }

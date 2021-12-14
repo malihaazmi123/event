@@ -6,19 +6,21 @@
 			</div>
 			<div class="col-xs-10 text-right menu-1">
 				<ul>
-					<li class="active"><a href="index.html">Home</a></li>
+					<li class="active"><a href="{{route('frontend')}}">Home</a></li>
 					<li class="has-dropdown">
-						<a href="services.html">Event</a>
+						<a>Event</a>
 						<ul class="dropdown">
-							<li><a href="#">Web Design</a></li>
-							<li><a href="#">eCommerce</a></li>
-							<li><a href="#">Branding</a></li>
-							<li><a href="#">API</a></li>
+							<li><a href="#">Weddings</a></li>
+							<li><a href="#">Live musics</a></li>
+							<li><a href="#">Meeting</a></li>
+							<li><a href="#">Birthday Party</a></li>
+							<li><a href="#">Corporate Events</a></li>
+							<li><a href="#">Reunion</a></li>
 						</ul>
-						<li><a href="about.html">Registration</a></li>
-						<li><a href="about.html">Log in</a></li>
+						<li><a href="{{route('website.registration')}}">Registration</a></li>
+						<li><a href="{{route('website.login')}}">Log in</a></li>
 					<li class="has-dropdown">
-						<a href="services.html">Services</a>
+						<a >Services</a>
 						<ul class="dropdown">
 							<li><a href="#">Web Design</a></li>
 							<li><a href="#">eCommerce</a></li>
@@ -27,7 +29,7 @@
 						</ul>
 					</li>
 					<li class="has-dropdown">
-						<a href="services.html">Booking</a>
+						<a >Booking</a>
 						<ul class="dropdown">
 							<li><a href="{{route('booking.eventbook')}}"> Event Booking</a></li>
 							<li><a href="#">Service Booking</a></li>

@@ -46,8 +46,8 @@
                                 </span>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('event')}}">Wedding</a>
-                                <a class="dropdown-item" href="{{route('weekly')}}">Holud</a>
+                                <a class="dropdown-item" href="{{route('event.add')}}">Add event</a>
+                                <a class="dropdown-item" href="{{route('event.addlist')}}">Addlist</a>
                                 <a class="dropdown-item" href="#">Reciption</a>
                                 <a class="dropdown-item" href="#">Birthday Party</a>
                                 <a class="dropdown-item" href="{{route('event.eventlist')}}">Event list</a>
@@ -55,7 +55,7 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{route('welcome.user')}}">
                                 <i class="far fa-user"></i>
                                 Users
                             </a>
@@ -78,7 +78,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{route('event')}}">Wedding</a>
-                                <a class="dropdown-item" href="{{route('weekly')}}">Holud</a>
+                                <a class="dropdown-item" href="#">Holud</a>
                                 <a class="dropdown-item" href="#">Reciption</a>
                                 <a class="dropdown-item" href="#">Birthday Party</a>
                                 <a class="dropdown-item" href="{{route('event.eventlist')}}">Event list</a>
