@@ -9,20 +9,24 @@
       <th scope="col">Email</th>
       <th scope="col">Permanent_Address</th>
       <th scope="col">Current_Address</th>
+      <th scope="col">Staff_Image</th>
       <!-- <th scope="col">Description</th>
       <th scope="col">Handle</th> -->
       
     </tr>
 </thead>
 <tbody>
-@foreach($staffs as $key=>$holder)
+@foreach($staffs as $key=>$staff)
     <tr>
       <td>{{$key+1}}</td>
-      <td>{{$holder->name}}</td>
-      <td>{{$holder->jobdesignation}}</td>
-      <td>{{$holder->email}}</td>
-      <td>{{$holder->paddress}}</td>
-      <td>{{$holder->caddress}}</td>
+      <td>{{$staff->name}}</td>
+      <td>{{$staff->jobdesignation}}</td>
+      <td>{{$staff->email}}</td>
+      <td>{{$staff->paddress}}</td>
+      <td>{{$staff->caddress}}</td>
+      <td>
+        <img width="100px" src="{{url('/uploads/'.$staff->Image)}}" alt="">
+      </td>
     </tr>
     @endforeach
   </tbody>

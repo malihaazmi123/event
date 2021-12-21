@@ -104,7 +104,7 @@
 						<div class="timeline-panel">
 							<div class="timeline-heading">
 								<h3 class="timeline-title">First We Meet</h3>
-								<span class="date">December 25, 2015</span>
+								<span class="date"></span></span>
 							</div>
 							<div class="timeline-body">
 								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>

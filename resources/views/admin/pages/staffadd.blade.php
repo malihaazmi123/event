@@ -4,7 +4,7 @@
 @if (session()->has('msg'))
      <p class="alert alert-success">{{session()->get('msg')}}</p>
 @endif
-<form action="{{route('staff.post.add')}}" method="POST" class="row g-3" style="color :white">
+<form action="{{route('staff.post.add')}}" method="POST" class="row g-3" style="color :white" enctype="multipart/form-data">
 @csrf
 
     <div class="col-md-6" style="color :white">
@@ -19,14 +19,18 @@
     <label for="inputEmail4" class="form-label">Email</label>
     <input name="Email" type="email" class="form-control" id="inputEmail4" placeholder="Email" style="color :black">
   </div>
-  <div class="col-12">
+  <div class="col-6">
     <label for="inputAddress" class="form-label">Address (Permanent)</label>
     <input name="Permanent_Address" type="text" class="form-control" id="inputAddress" placeholder="Permanent Address" style="color :black">
   </div>
-  <div class="col-12">
+  <div class="col-6">
     <label for="inputAddress2" class="form-label">Address(Current) </label>
     <input name="Current_Address" type="text" class="form-control" id="inputAddress2" placeholder="Current Address" style="color :black">
   </div>
+  <div class="col-md-6">
+    <label for="EventTextInput" class="form-label">Image file </label>
+    <input name="Imagefile" type="file" id="fileInput" class="form-control" placeholder="choose image">
+ </div>
   <div class="col-12">
     <div class="form-check">
       <input class="form-check-input" type="checkbox" id="gridCheck">

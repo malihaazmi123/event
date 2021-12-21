@@ -39,6 +39,14 @@ class StaffController extends Controller
 
 
         ]);
+        $staffimage='';
+        if ($request->hasfile('Imagefile')) {
+            $file=$request->file('Imagefile');
+            $staffimage=date('Ymdhms').'.'.$file->getClientOriginalExtension();
+            // dd($staffimage);
+            $file->storeAs('/uploads',$staffimage);
+
+        }
         //dd($request->all()); 
         Stafflist::create([
 
@@ -47,6 +55,7 @@ class StaffController extends Controller
             'email'=>$request->Email,
             'paddress'=>$request->Permanent_Address,
             'caddress'=>$request->Current_Address,
+            'Image'=>$staffimage,
             //'paddress'=>$request->Event_Date,
         ]);
         return redirect()->back()->with('msg','staff list created successfully.');

@@ -20,6 +20,7 @@ class CreateStafflistsTable extends Migration
             $table->string('email');
             $table->string('paddress');
             $table->string('caddress');
+            $table->string('Image');
             $table->timestamps();
         });
     }

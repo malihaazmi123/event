@@ -16,7 +16,8 @@
     </div>
     <div class="mb-3">
       <label for="EventTextInput" class="form-label">Image file </label>
-  <input name="Imagefile" type="file" id="fileInput" class="form-control" placeholder="choose image">
+      <input name="Imagefile" type="file" id="fileInput" class="form-control" placeholder="choose image">
+   </div>
     <div class="mb-3">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="enabledFieldsetCheck" enabled>

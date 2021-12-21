@@ -65,5 +65,8 @@ return redirect()->back();
         ]);
      return redirect()->back();
   }
-    
+    public function Weddings(){
+        $lists = Addeventlist::all();
+        return view('website.pages.wedding',compact('lists'));
+    }
 }

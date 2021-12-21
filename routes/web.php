@@ -46,6 +46,8 @@ Route::get('/', function () {
 })->name('frontend');
 
 Route::get('booking/eventbooking',[BookingController::class,'eventbook'])->name('booking.eventbook');
-Route::get('login',[LoginController::class,'logininput'])->name('website.login');
 Route::get('registration',[LoginController::class,'inputregistration'])->name('website.registration');
-Route::post('registration/form',[LoginController::class,'storename'])->name('website.registration.form');
+Route::post('registration/form',[LoginController::class,'userregistration'])->name('website.registration.form');
+Route::post('user/login',[LoginController::class,'userlogin'])->name('websitw.user.login');
+Route::get('user/logout',[LoginController::class,'userlogout'])->name('website.user.logout');
+Route::get('user/weddings',[EventController::class,'Weddings'])->name('website.wedding.list');
