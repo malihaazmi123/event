@@ -21,10 +21,10 @@ class User extends Authenticatable
         'name',
         'phonenumber',
         'gender',
-        'date',
+         'date',
         'email',
         'password',
-        'confrimpassword',
+        // 'confrimpassword',
     ];
 
     /**

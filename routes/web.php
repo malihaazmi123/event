@@ -17,30 +17,40 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/admin', function () {
+Route::group(['prefix'=>'admin'],function (){
+Route::get('/login',[UserController::class,'login'])->name('welcome.admin.login');
+Route::post('/login',[UserController::class,'dologin'])->name('welcome.admin.dologin');
+Route::group(['middleware'=>'auth'],function(){
+Route::get('/', function () {
+    
     return view('welcome');
-});
+})->name('welcome.admin');
+//staff
 Route::get('/Staff',[StaffController::class,'ProductM']);
 Route::get('/Staff/AddStaff',[StaffController::class,'Addstaff'])->name('staff.Addstaff');
 Route::get('/Staff/Stafflist',[StaffController::class,'StafflistU'])->name('staff.staffList');
 Route::post('/staff/addstaff',[StaffController::class,'staffadd'])->name('staff.post.add');
-Route::get('/service',[ServiceController::class,'serviceM']);
+//service
+Route::get('/service',[ServiceController::class,'serviceAdd'])->name('admin.service.addservice');
+//user
 Route::get('/user',[UserController::class,'userlist'])->name('welcome.user');
+Route::get('/logout',[UserController::class,'logout'])->name('welcome.admin.logout');
+//event
 Route::get('/event',[EventController::class,'eventM'])->name('event');
 Route::get('/dashboard/form',[EventController::class,'form'])->name('form');
-Route::get('/admin/accounts',[EventController::class,'accounts'])->name('accountform');
+Route::get('/accounts',[EventController::class,'accounts'])->name('accountform');
 Route::post('/dashboard/store',[EventController::class,'storeE'])->name('eventlist');
 Route::get('/event/eventlist', [EventController:: class, 'Evenlist'])->name('event.eventlist');
 Route::get('/event/addevent',[EventController::class,'addevent'])->name('event.add');
 Route::get('/event/addlist',[EventController::class,'addlist'])->name('event.addlist');
 Route::post('event/add/event',[EventController::class,'eventaddlist'])->name('event.add.list');
 
-
+});
+});
 
 //// website
 
-
+Route::group(['prefix'=>'website'],function (){
 Route::get('/', function () {
     return view('website.content');
 })->name('frontend');
@@ -51,3 +61,4 @@ Route::post('registration/form',[LoginController::class,'userregistration'])->na
 Route::post('user/login',[LoginController::class,'userlogin'])->name('websitw.user.login');
 Route::get('user/logout',[LoginController::class,'userlogout'])->name('website.user.logout');
 Route::get('user/weddings',[EventController::class,'Weddings'])->name('website.wedding.list');
+});

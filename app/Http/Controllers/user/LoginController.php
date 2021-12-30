@@ -22,13 +22,13 @@ class LoginController extends Controller
         'name'=>$request->User_name,
         'phonenumber'=>$request->phone,
         'gender'=>$request->Gender,
-        'date'=>$request->Event_Date,
+         'date'=>$request->Event_Date,
         'email'=>$request->email,
         'password'=>bcrypt($request->password),
-        'confrimpassword'=>$request->confirmpassword,
+        // 'confrimpassword'=>$request->confirmpassword,
         
     ]);
-    return redirect()->back();
+    return redirect()->back()->with('msg','Registration successfully');
     }
     public function userlogin(Request $request)
     {

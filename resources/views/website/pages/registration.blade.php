@@ -2,6 +2,9 @@
 @section('contents')
 
 <div class="container" style="margin-top:150px;">
+  @if (session()->has('msg'))
+     <p class="alert alert-success">{{session()->get('msg')}}</p>
+@endif
     <form action="{{route('website.registration.form')}}" method="POST" style="color :rgb(10, 10, 10)">
       @csrf
         <fieldset enabled>
@@ -15,14 +18,13 @@
             <input  name="phone" type="tel" id="phone" class="form-control" placeholder="Phone number">
           </div>
           <div class="mb-3">
-            <label for="gender" class="form-label">Gender</label>
+            <label for="browswes" class="form-label">Gender</label>
             <input name="Gender" type="GenderText" id="gender" class="form-control" placeholder="Gender">
-          <select class="form-select form-select-lg mb-6" aria-label=".form-select-sm example">
-           <option selected>Open this select menu</option>
+          <datalist id="browsers">
             <option value="1">Female</option>
             <option value="2">Male</option>
             <option value="3">Other's</option>
-          </select>
+          </datalist>
         </div>
         <div class="mb-3">
             <label for="EventDate" class="form-label"> Date</label>
@@ -39,10 +41,10 @@
             <label for="floatingPassword">Password</label>
             <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
           </div>
-          <div class="form-floating">
+        <!--  <div class="form-floating">
             <label for="floatingPassword">Confirm Password</label>
             <input name="confirmpassword" type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password">
-          </div>
+          </div>-->
     
           <div class="mb-3">
             <div class="form-check">

@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
-    public function serviceM()
+    public function serviceAdd()
     {
-        return view('admin.pages.serviceAdmin');
+        return view('admin.pages.serviceaddform');
     }
 }

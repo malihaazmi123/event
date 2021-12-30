@@ -30,7 +30,7 @@
                                 <a class="dropdown-item" href="{{route('staff.Addstaff')}}">Add_Staff</a>
                                 <a class="dropdown-item" href="{{route('staff.staffList')}}">Staff_list</a>
                             </div>
-
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('accountform')}}">
                                 <i class="far fa-user"></i>
@@ -86,16 +86,26 @@
                         </li>
                         
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url('/service')}}">
-                                <i class="far fa-user"></i>
-                                Services
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-user"></i>
+                                <span>
+                                    Services<i class="fas fa-angle-down"></i>
+                                </span>
                             </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{route('admin.service.addservice')}}">AddServices</a>
+                                <a class="dropdown-item" href="#">CateringList</a>
+                                <a class="dropdown-item" href="#">DecorationList</a>
+                                <a class="dropdown-item" href="#">PhotographyList</a>
+                                <a class="dropdown-item" href="#">ServicetoolsList</a>
+                            </div>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link d-block" href="login.html">
+                            <a class="nav-link d-block" href="{{route('welcome.admin.logout')}}">
                                 Admin, <b>Logout</b>
                             </a>
                         </li>
