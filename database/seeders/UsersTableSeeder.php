@@ -23,6 +23,7 @@ class UsersTableSeeder extends Seeder
             'password'=>bcrypt('1234'),
              'phonenumber'=>'01614345658',
              'gender'=>'female',
+             'role'=>'admin'
              
         ]);
     }

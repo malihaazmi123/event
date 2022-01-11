@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix'=>'admin'],function (){
 Route::get('/login',[UserController::class,'login'])->name('welcome.admin.login');
 Route::post('/login',[UserController::class,'dologin'])->name('welcome.admin.dologin');
-Route::group(['middleware'=>'auth'],function(){
+Route::group(['middleware'=>['auth','admin']],function(){
 Route::get('/', function () {
     
     return view('welcome');
@@ -30,8 +30,17 @@ Route::get('/Staff',[StaffController::class,'ProductM']);
 Route::get('/Staff/AddStaff',[StaffController::class,'Addstaff'])->name('staff.Addstaff');
 Route::get('/Staff/Stafflist',[StaffController::class,'StafflistU'])->name('staff.staffList');
 Route::post('/staff/addstaff',[StaffController::class,'staffadd'])->name('staff.post.add');
-//service
-Route::get('/service',[ServiceController::class,'serviceAdd'])->name('admin.service.addservice');
+//service//catering
+Route::get('/cateringadd',[ServiceController::class,'cateringadd'])->name('admin.service.cateringadd');
+Route::post('/cateringadd',[ServiceController::class,'cateringstore'])->name('admin.service.cateringstore');
+Route::get('/cateringlist',[ServiceController::class,'cateringlist'])->name('admin.service.cateringlist');
+Route::get('/cateringdetails/{cate_id}',[ServiceController::class,'viewCatering'])->name('admin.view.catering');
+Route::get('/cateringdelete/{cate_id}',[ServiceController::class,'deletecatering'])->name('admin.delete.catering');
+Route::get('/cateringedit/{cate_id}',[ServiceController::class,'editcatering'])->name('admin.edit.catering');
+Route::PUT('/catering/update/{cate_id}',[ServiceController::class,'updateCatering'])->name('admin.update.catering');
+
+//service//decoration
+Route::get('/decorationadd',[ServiceController::class,'decorationadd'])->name('admin.service.decorationadd');
 //user
 Route::get('/user',[UserController::class,'userlist'])->name('welcome.user');
 Route::get('/logout',[UserController::class,'logout'])->name('welcome.admin.logout');

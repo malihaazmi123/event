@@ -92,13 +92,16 @@
                                 <i class="fas fa-user"></i>
                                 <span>
                                     Services<i class="fas fa-angle-down"></i>
-                                </span>
+                                </span   
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('admin.service.addservice')}}">AddServices</a>
-                                <a class="dropdown-item" href="#">CateringList</a>
+                                <a class="dropdown-item" href="{{route('admin.service.cateringadd')}}">AddCatering</a>
+                                <a class="dropdown-item" href="{{route('admin.service.cateringlist')}}">CateringList</a>
+                                <a class="dropdown-item" href="{{route('admin.service.decorationadd')}}">AddDecoration</a>
                                 <a class="dropdown-item" href="#">DecorationList</a>
+                                <a class="dropdown-item" href="#">AddPhotography</a>
                                 <a class="dropdown-item" href="#">PhotographyList</a>
+                                <a class="dropdown-item" href="#">AddServicetools</a>
                                 <a class="dropdown-item" href="#">ServicetoolsList</a>
                             </div>
                         </li>
@@ -106,10 +109,9 @@
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link d-block" href="{{route('welcome.admin.logout')}}">
-                                Admin, <b>Logout</b>
+                                Admin,<b>Logout</b>
                             </a>
                         </li>
-                        
                     </ul>
                 </div>
             </div>
