@@ -7,7 +7,7 @@
         <th scope="col">User_name</th>
         <th scope="col">Phone_Number</th>
         <th scope="col">Gender</th>
-        <th scope="col">Date</th>
+       <!-- <th scope="col">Date</th>-->
         <th scope="col">Email</th>
         <!--<th scope="col">De</th>
         <th scope="col">Handle</th> -->
@@ -22,7 +22,7 @@
       <td>{{$userview->name}}</td>
       <td>{{$userview->phonenumber}}</td>
       <td>{{$userview->gender}}</td>
-      <td>{{$userview->date}}</td>
+     <!-- <td>{{$userview->date}}</td>-->
       <td>{{$userview->email}}</td>  {{--table/databasename --}}
     </tr>
     @endforeach

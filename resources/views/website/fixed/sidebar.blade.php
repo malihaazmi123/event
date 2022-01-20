@@ -21,20 +21,22 @@
 					<li class="has-dropdown">
 						<a >Services</a>
 						<ul class="dropdown">
-							<li><a href="#">Catering</a></li>
-							<li><a href="#">Decoration</a></li>
-							<li><a href="#">Photography</a></li>
-							<li><a href="#">Servicing tools</a></li>
+							<li><a href="{{route('website.catering.list')}}">Catering</a></li>
+							<li><a href="{{route('website.decoration.list')}}">Decoration</a></li>
+							<li><a href="{{route('website.photograph.list')}}">Photography</a></li>
+							<li><a href="#">Vendors</a></li>
 						</ul>
 					</li>
+					
 					<li class="has-dropdown">
-						<a >Booking</a>
+						<a >Bookingss</a>
 						<ul class="dropdown">
 							<li><a href="{{route('booking.eventbook')}}"> Event Booking</a></li>
 							<li><a href="#">Service Booking</a></li>
 						</ul>
 					</li>
 					<li><a href="contact.html">Contact</a></li>
+					<li><a class="nav-link" href="{{route('website.cart.get')}}">Booking ({{session()->has('cart') ? count(session()->get('cart')):0}})</a></li>
 					<!--<li><a href="{{route('website.registration')}}">Registration</a></li>-->
 					
 					@if (auth()->user())

@@ -26,13 +26,13 @@
             <option value="3">Other's</option>
           </datalist>
         </div>
-        <div class="mb-3">
+       <!-- <div class="mb-3">
             <label for="EventDate" class="form-label"> Date</label>
       
                <input name="Event_Date" type="datetime-local" id="Date" class="form-control" placeholder="Date">    
                <select id="enabledSelect" class="form-select">
             </select>
-          </div>
+          </div>-->
           <div class="form-floating mb-3">
             <label for="floatingInput">Email address</label>
             <input name="email" type="email" class="form-control" id="floatingemail" placeholder="name@example.com">

@@ -41,6 +41,12 @@ Route::PUT('/catering/update/{cate_id}',[ServiceController::class,'updateCaterin
 
 //service//decoration
 Route::get('/decorationadd',[ServiceController::class,'decorationadd'])->name('admin.service.decorationadd');
+Route::get('/decorationlist',[ServiceController::class,'decorationlist'])->name('admin.service.decorationlist');
+Route::post('/decorationlist',[ServiceController::class,'decorationstore'])->name('admin.service.decorationstore');
+//service//photography
+Route::get('/photographyadd',[ServiceController::class,'photographyadd'])->name('admin.service.photpgraphyadd');
+Route::get('/photographylist',[ServiceController::class,'photographylist'])->name('admin.service.photpgraphylist');
+Route::post('/photostore',[ServiceController::class,'photostore'])->name('admin.service.photostore');
 //user
 Route::get('/user',[UserController::class,'userlist'])->name('welcome.user');
 Route::get('/logout',[UserController::class,'logout'])->name('welcome.admin.logout');
@@ -63,6 +69,11 @@ Route::group(['prefix'=>'website'],function (){
 Route::get('/', function () {
     return view('website.content');
 })->name('frontend');
+Route::group(['middleware'=>'web_auth'],function(){
+Route::get('/add-to-booking/{id}',[BookingController::class,'AddBooking'])->name('website.booking.add');
+Route::get('cart-get',[BookingController::class,'getcart'])->name('website.cart.get');    
+Route::get('cart-clear',[BookingController::class,'Clearbook'])->name('website.cart.clear');    
+});
 
 Route::get('booking/eventbooking',[BookingController::class,'eventbook'])->name('booking.eventbook');
 Route::get('registration',[LoginController::class,'inputregistration'])->name('website.registration');
@@ -70,4 +81,8 @@ Route::post('registration/form',[LoginController::class,'userregistration'])->na
 Route::post('user/login',[LoginController::class,'userlogin'])->name('websitw.user.login');
 Route::get('user/logout',[LoginController::class,'userlogout'])->name('website.user.logout');
 Route::get('user/weddings',[EventController::class,'Weddings'])->name('website.wedding.list');
+//website service
+Route::get('user/catering',[ServiceController::class,'Caterings'])->name('website.catering.list');
+Route::get('user/decoration',[ServiceController::class,'Decoration'])->name('website.decoration.list');
+Route::get('user/photography',[ServiceController::class,'Photograph'])->name('website.photograph.list');
 });

@@ -1,30 +1,30 @@
 @extends('welcome')
 @section('content')
 <h4>Decoration list form</h4>
-<form action="" method="" enctype="multipart/form-data">
+<form action="{{route('admin.service.decorationstore')}}" method="POST" enctype="multipart/form-data">
   @csrf
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputText">Decoration Name</label>
-      <input name="FoodName" type="TextInput" class="form-control" id="TextInputFoodName" placeholder="Food name">
+      <label for="inputTextDecorationName">Decoration Name</label>
+      <input name="DecorationName" type="TextInputDecorationName" class="form-control" id="TextInputDecorationName" placeholder="Decoration name">
     </div>
     <div class="form-group col-md-6">
-      <label for="inputPassword4">Decoration Type</label>
-      <input name="FoodType" type="TextInput" class="form-control" id="TextInputFoodtype" placeholder="Food Type">
+      <label for="inputtext">Decoration Type</label>
+      <input name="DecorationType" type="TextInputDecorationType" class="form-control" id="TextInputDecorationType" placeholder="Decoration Type">
     </div>
   </div>
    <div class="form-row">
      <div class="form-group col-md-6">
-       <label for="inputAddress">Decoration place</label>
-       <input name="FoodQuantity" type="TextInput" class="form-control" id="TextInputFoodQuantity" placeholder="Food Quantity">
+       <label for="inputDecorationPlace">Decoration place</label>
+       <input name="DecorationPlace" type="TextInputDecorationPlace" class="form-control" id="TextInputDecorationPlace" placeholder="Decoration place">
      </div>
      <div class="form-group col-md-6">
-       <label for="inputAddress2">Decoration Cost</label>
-       <input name="FoodPrice" type="TextInput" class="form-control" id="TextInputFoodPrice" placeholder="Food Price">
+       <label for="inputDecorationcost">Decoration Cost</label>
+       <input name="Decorationcost" type="TextInputDecorationcost" class="form-control" id="TextInputDecorationcost" placeholder="Decoration Cost">
      </div>
    </div>
       <div class="mb-3">
-       <label for="EventTextInput" class="form-label">Image file </label>
+       <label for="TextInput" class="form-label">Image file </label>
        <input name="Imagefile" type="file" id="fileInput" class="form-control" placeholder="choose image">
       </div>
     </div>

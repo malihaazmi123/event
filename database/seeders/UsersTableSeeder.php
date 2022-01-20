@@ -21,9 +21,10 @@ class UsersTableSeeder extends Seeder
             'name'=>'admin',
             'email'=>'admin@gmail.com',
             'password'=>bcrypt('1234'),
-             'phonenumber'=>'01614345658',
-             'gender'=>'female',
-             'role'=>'admin'
+            'phonenumber'=>'01614345658',
+            'gender'=>'female',
+            //'date'=>'12/23/2021 03:57 PM',
+            'role'=>'admin'
              
         ]);
     }

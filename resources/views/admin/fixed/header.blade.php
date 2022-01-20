@@ -98,9 +98,9 @@
                                 <a class="dropdown-item" href="{{route('admin.service.cateringadd')}}">AddCatering</a>
                                 <a class="dropdown-item" href="{{route('admin.service.cateringlist')}}">CateringList</a>
                                 <a class="dropdown-item" href="{{route('admin.service.decorationadd')}}">AddDecoration</a>
-                                <a class="dropdown-item" href="#">DecorationList</a>
-                                <a class="dropdown-item" href="#">AddPhotography</a>
-                                <a class="dropdown-item" href="#">PhotographyList</a>
+                                <a class="dropdown-item" href="{{route('admin.service.decorationlist')}}">DecorationList</a>
+                                <a class="dropdown-item" href="{{route('admin.service.photpgraphyadd')}}">AddPhotography</a>
+                                <a class="dropdown-item" href="{{route('admin.service.photpgraphylist')}}">PhotographyList</a>
                                 <a class="dropdown-item" href="#">AddServicetools</a>
                                 <a class="dropdown-item" href="#">ServicetoolsList</a>
                             </div>
