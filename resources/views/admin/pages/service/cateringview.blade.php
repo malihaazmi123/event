@@ -2,15 +2,15 @@
 
 
 @section('content')
-    <h1>Catering Details</h1>
+    <h1>service Details</h1>
 
     <p>
-        <img style="border-radius: 4px;" width="200px;"  src="{{url('/uploads/'.$catering->Image)}}" alt="product">
+        <img style="border-radius: 4px;" width="200px;"  src="{{url('/uploads/'.$serviceview->image)}}" alt="service">
     </p>
-<p>Food Name: {{$catering->foodname}}</p>
-<p>Food Type: {{$catering->foodtype}}</p>
-<p>Food Quantity:{{$catering->foodquantity}}</p>
-<p>Food Price: <h4><span style="color: rgb(179, 125, 19)">BDT {{$catering->foodprice}}</span></h4></p>
+<p>Food Name: {{$serviceview->name}}</p>
+<p>Food Type: {{$serviceview->description}}</p>
+<p>Food Quantity:{{$serviceview->status}}</p>
+<p>Food Price: <h4><span style="color: rgb(179, 125, 19)">BDT {{$serviceview->price}}</span></h4></p>
 
 
 @endsection

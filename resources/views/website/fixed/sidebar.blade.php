@@ -18,15 +18,17 @@
 							<li><a href="#">Corporate Events</a></li>
 							<li><a href="#">Reunion</a></li>
 						</ul>
+					</li>
+
 					<li class="has-dropdown">
 						<a >Services</a>
-						<ul class="dropdown">
-							<li><a href="{{route('website.catering.list')}}">Catering</a></li>
-							<li><a href="{{route('website.decoration.list')}}">Decoration</a></li>
-							<li><a href="{{route('website.photograph.list')}}">Photography</a></li>
-							<li><a href="#">Vendors</a></li>
+						<ul class="dropdown" name="type">
+								@foreach ($types as $type )
+								<li><a href="{{route('website.catering.list',$type->id)}}" value="{{$type->id}}">{{$type->name}}</a></li>
+								@endforeach
 						</ul>
 					</li>
+
 					
 					<li class="has-dropdown">
 						<a >Bookingss</a>

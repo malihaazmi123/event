@@ -25,7 +25,7 @@
       <td>{{$cate->foodname}}</td>
       <td>{{$cate->foodtype}}</td>
       <td>{{$cate->foodquantity}}</td>
-      <td>{{$cate->foodprice}}</td>
+      <td>{{$cate->foodcost}}</td>
 
       <td>
         <img width="100px" src="{{url('/uploads/'.$cate->Image)}}" alt="">

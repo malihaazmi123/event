@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Models\Eventlist;
+use App\Models\Type;
 use App\Models\Addeventlist;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -67,6 +68,7 @@ return redirect()->back();
   }
     public function Weddings(){
         $lists = Addeventlist::all();
-        return view('website.pages.wedding',compact('lists'));
+        $type=Type::all();
+        return view('website.pages.wedding',compact('lists','type'));
     }
 }

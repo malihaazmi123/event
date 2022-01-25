@@ -5,12 +5,13 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Photography;
-
+use App\Models\Type;
 class BookingController extends Controller
 {
   public function eventbook()
   {
-      return view('website.pages.bookingevent');
+    $type=Type::all();
+      return view('website.pages.bookingevent',compact('type'));
   }
    
   public function getcart()

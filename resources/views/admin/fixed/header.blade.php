@@ -95,14 +95,14 @@
                                 </span   
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('admin.service.cateringadd')}}">AddCatering</a>
-                                <a class="dropdown-item" href="{{route('admin.service.cateringlist')}}">CateringList</a>
-                                <a class="dropdown-item" href="{{route('admin.service.decorationadd')}}">AddDecoration</a>
-                                <a class="dropdown-item" href="{{route('admin.service.decorationlist')}}">DecorationList</a>
-                                <a class="dropdown-item" href="{{route('admin.service.photpgraphyadd')}}">AddPhotography</a>
-                                <a class="dropdown-item" href="{{route('admin.service.photpgraphylist')}}">PhotographyList</a>
-                                <a class="dropdown-item" href="#">AddServicetools</a>
-                                <a class="dropdown-item" href="#">ServicetoolsList</a>
+                                <a class="dropdown-item" href="{{route('admin.service.decorationadd')}}">ServiceTable</a>
+                                <a class="dropdown-item" href="{{route('admin.service.decorationlist')}}">ServiceList</a>
+                                {{-- <a class="dropdown-item" href="{{route('admin.service.cateringadd')}}"></a>
+                                <a class="dropdown-item" href="{{route('admin.service.cateringlist')}}"></a>
+                                <a class="dropdown-item" href="{{route('admin.service.photpgraphyadd')}}"></a>
+                                <a class="dropdown-item" href="{{route('admin.service.photpgraphylist')}}"></a> --}}
+                                <a class="dropdown-item" href="{{route('admin.service.TypeTable')}}">AddTypeTable</a>
+                                <a class="dropdown-item" href="{{route('admin.service.TypeList')}}">TypeList</a>
                             </div>
                         </li>
                     </ul>
