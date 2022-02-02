@@ -9,15 +9,8 @@
 				<ul>
 					<li class="active"><a href="{{route('frontend')}}">Home</a></li>
 					<li class="has-dropdown">
-						<a>Event</a>
-						<ul class="dropdown">
-							<li><a href="{{route('website.wedding.list')}}">Weddings</a></li>
-							<li><a href="#">Live musics</a></li>
-							<li><a href="#">Meeting</a></li>
-							<li><a href="#">Birthday Party</a></li>
-							<li><a href="#">Corporate Events</a></li>
-							<li><a href="#">Reunion</a></li>
-						</ul>
+							<li><a href="{{route('website.wedding.list')}}">Event</a></li>
+						
 					</li>
 
 					<li class="has-dropdown">
@@ -29,17 +22,11 @@
 						</ul>
 					</li>
 
-					
-					<li class="has-dropdown">
-						<a >Bookingss</a>
-						<ul class="dropdown">
-							<li><a href="{{route('booking.eventbook')}}"> Event Booking</a></li>
-							<li><a href="#">Service Booking</a></li>
-						</ul>
-					</li>
 					<li><a href="contact.html">Contact</a></li>
 					<li><a class="nav-link" href="{{route('website.cart.get')}}">Booking ({{session()->has('cart') ? count(session()->get('cart')):0}})</a></li>
-					<!--<li><a href="{{route('website.registration')}}">Registration</a></li>-->
+					
+					<li><a class="nav-link" href="{{route('profile.view',(auth()->user()?$user->id:0))}}">My Profile</a></li>
+					
 					
 					@if (auth()->user())
 					<li class="nav-item">

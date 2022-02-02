@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-xl">
             <div class="container h-100">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="#">
                     <h1 class="tm-site-title mb-0">Admin</h1>
                 </a>
                 <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -11,7 +11,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto h-100">
                         <li class="nav-item">
-                            <a class="nav-link " href="{{route('form')}}">
+                            <a class="nav-link " href="{{route('admin.dashboard')}}">
                                 <i class="fas fa-tachometer-alt"></i>
                                 Dashboard
                                 
@@ -38,7 +38,7 @@
                             </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{route('event')}}" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-cog"></i>
                                 <span>
@@ -48,9 +48,6 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{route('event.add')}}">Add event</a>
                                 <a class="dropdown-item" href="{{route('event.addlist')}}">Addlist</a>
-                                <a class="dropdown-item" href="#">Reciption</a>
-                                <a class="dropdown-item" href="#">Birthday Party</a>
-                                <a class="dropdown-item" href="{{route('event.eventlist')}}">Event list</a>
                             </div>
                         </li>
                         
@@ -62,29 +59,12 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{route('admin.booking.list')}}">
                                 <i class="far fa-user"></i>
                                 Bookings
                             </a>
                         </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{route('event')}}" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-cog"></i>
-                                <span>
-                                    Booking details <i class="fas fa-angle-down"></i>
-                                </span>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('event')}}">Wedding</a>
-                                <a class="dropdown-item" href="#">Holud</a>
-                                <a class="dropdown-item" href="#">Reciption</a>
-                                <a class="dropdown-item" href="#">Birthday Party</a>
-                                <a class="dropdown-item" href="{{route('event.eventlist')}}">Event list</a>
-                            </div>
-                        </li>
-                        
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -97,10 +77,6 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{route('admin.service.decorationadd')}}">ServiceTable</a>
                                 <a class="dropdown-item" href="{{route('admin.service.decorationlist')}}">ServiceList</a>
-                                {{-- <a class="dropdown-item" href="{{route('admin.service.cateringadd')}}"></a>
-                                <a class="dropdown-item" href="{{route('admin.service.cateringlist')}}"></a>
-                                <a class="dropdown-item" href="{{route('admin.service.photpgraphyadd')}}"></a>
-                                <a class="dropdown-item" href="{{route('admin.service.photpgraphylist')}}"></a> --}}
                                 <a class="dropdown-item" href="{{route('admin.service.TypeTable')}}">AddTypeTable</a>
                                 <a class="dropdown-item" href="{{route('admin.service.TypeList')}}">TypeList</a>
                             </div>

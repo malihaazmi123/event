@@ -5,6 +5,7 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Type;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
@@ -12,10 +13,29 @@ class LoginController extends Controller
 
     public function inputregistration()
     {
-        return view('website.pages.registration');
+        $types=Type::all();
+        return view('website.pages.registration',compact('types'));
     }
     public function userregistration(Request $request)
     {
+        
+        $request->validate([
+            'User_name'=>'required',
+            'phone'=>'required',
+            'Event_Date'=>'required',
+            'email'=>'required',
+            'password'=>'required',
+
+
+        ]);
+
+        // $userimage='';
+        // if ($request->hasfile('Imagefile')) {
+        //     $file=$request->file('Imagefile');
+        //     $userimage=date('Ymdhms').'.'.$file->getClientOriginalExtension();
+        //      //dd($userimage);
+        //     $file->storeAs('/uploads',$userimage);
+        // }
     //   dd($request->all());
       User::create([
 
@@ -25,10 +45,10 @@ class LoginController extends Controller
          'date'=>$request->Event_Date,
         'email'=>$request->email,
         'password'=>bcrypt($request->password),
-        // 'confrimpassword'=>$request->confirmpassword,
+        // 'image'=>$userimage,
         
     ]);
-    return redirect()->back()->with('msg','Registration successfully');
+    return redirect()->route('frontend')->with('msg','Registration successfully');
     }
     public function userlogin(Request $request)
     {

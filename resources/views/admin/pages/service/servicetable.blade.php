@@ -24,6 +24,10 @@
      <label for="inputServiceDescription">Service Description</label>
      <input name="ServiceDescription" type="TextInputServiceDescription" class="form-control" id="TextInputServiceDescription" placeholder="Service Description">
    </div>
+   <div class="form-group col-md-6">
+    <label for="inputEventname">Event Name</label>
+    <input name="Eventname" type="TextInputEventname" class="form-control" id="TextInputEventname" placeholder="Event Name">
+  </div>
     <div class="form-group col-md-6">
        <label for="inputServicePrice">Service Price</label>
        <input name="ServicePrice" type="TextInputServicePrice" class="form-control" id="TextInputServicePrice" placeholder="Service Price">

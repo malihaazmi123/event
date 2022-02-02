@@ -5,17 +5,17 @@
   @if (session()->has('msg'))
      <p class="alert alert-success">{{session()->get('msg')}}</p>
 @endif
-    <form action="{{route('website.registration.form')}}" method="POST" style="color :rgb(10, 10, 10)">
+    <form action="{{route('website.registration.form')}}" method="POST" style="color :rgb(10, 10, 10)" enctype="multipart/form-data">
       @csrf
         <fieldset enabled>
           <legend class="text-center" style="padding-bottom: 12px;">Registration Form</legend>
           <div class="mb-3">
             <label for="UserName" class="form-label">User Name </label>
-        <input name="User_name" type="UserTextName" id="UsertName" class="form-control" placeholder="User name">
+        <input name="User_name" type="UserTextName" id="UsertName" class="form-control" placeholder="User name" required>
           </div>
           <div class="mb-3">
             <label for="phone" class="form-label">Phone number</label>
-            <input  name="phone" type="tel" id="phone" class="form-control" placeholder="Phone number">
+            <input  name="phone" type="tel" id="phone" class="form-control" placeholder="Phone number" required>
           </div>
           <div class="mb-3">
             <label for="browswes" class="form-label">Gender</label>
@@ -26,25 +26,26 @@
             <option value="3">Other's</option>
           </datalist>
         </div>
-       <!-- <div class="mb-3">
-            <label for="EventDate" class="form-label"> Date</label>
+        <div class="mb-3">
+            <label for="EventDate" class="form-label">BirthDate</label>
       
-               <input name="Event_Date" type="datetime-local" id="Date" class="form-control" placeholder="Date">    
+               <input name="Event_Date" type="datetime-local" id="Date" class="form-control" placeholder="Date" required>    
                <select id="enabledSelect" class="form-select">
             </select>
-          </div>-->
+          </div>
           <div class="form-floating mb-3">
             <label for="floatingInput">Email address</label>
-            <input name="email" type="email" class="form-control" id="floatingemail" placeholder="name@example.com">
+            <input name="email" type="email" class="form-control" id="floatingemail" placeholder="name@example.com" required>
           </div>
           <div class="form-floating">
             <label for="floatingPassword">Password</label>
-            <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
           </div>
-        <!--  <div class="form-floating">
-            <label for="floatingPassword">Confirm Password</label>
-            <input name="confirmpassword" type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password">
-          </div>-->
+
+          {{-- <div class="mb-3">
+            <label for="EventTextInput" class="form-label">Image file </label>
+            <input name="Imagefile" type="file" id="fileInput" class="form-control" placeholder="choose image">
+         </div> --}}
     
           <div class="mb-3">
             <div class="form-check">

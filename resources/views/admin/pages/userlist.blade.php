@@ -9,8 +9,8 @@
         <th scope="col">Gender</th>
        <!-- <th scope="col">Date</th>-->
         <th scope="col">Email</th>
-        <!--<th scope="col">De</th>
-        <th scope="col">Handle</th> -->
+        {{-- <th scope="col">Image</th> --}}
+        {{-- <th scope="col">Handle</th> --> --}}
         
       </tr>
   </thead>
@@ -22,8 +22,10 @@
       <td>{{$userview->name}}</td>
       <td>{{$userview->phonenumber}}</td>
       <td>{{$userview->gender}}</td>
-     <!-- <td>{{$userview->date}}</td>-->
       <td>{{$userview->email}}</td>  {{--table/databasename --}}
+      {{-- <td>
+        <img width="100px" src="{{url('/uploads/'.$userview->image)}}" alt="">
+      </td> --}}
     </tr>
     @endforeach
   </tbody>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Type;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -35,4 +36,10 @@ class UserController extends Controller
       Auth::logout();
       return redirect()->back();
    }
+   public function profile_view($user_id)
+    {
+       $types=Type::all();
+       $user=User::find($user_id);
+       return view('website.pages.profile',compact('types','user'));
+    }
 }

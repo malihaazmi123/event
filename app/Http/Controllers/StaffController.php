@@ -60,8 +60,44 @@ class StaffController extends Controller
         ]);
         return redirect()->back()->with('msg','staff list created successfully.');
     }
+    public function staffdelete($staff_id)
+    {
+        Stafflist::find($staff_id)->delete();
+        return redirect()->back();
+    }
+    public function staffedit($staff_id)
+    {
+        $staffedit = Stafflist::find($staff_id);
+        return view('admin.pages.staffedit',compact('staffedit'));
+    }
 
-
+     public function staffupdate(Request $request,$staff_id)
+     {
+        $staffupdate=Stafflist::find($staff_id);
+        $image_name=$staffupadate->image;
+        
+                if($request->hasFile('Imagefile'))
+                {
+                   
+                    $image_name=date('Ymdhis') .'.'. $request->file('Imagefile')->getClientOriginalExtension();
+        
+                  
+                    $request->file('Imagefile')->storeAs('/uploads',$image_name);
+        
+                }
+        
+        $staffupdate->update([
+         
+            'name'=>$request->Staff_name,
+            'jobdesignation'=>$request->Job_Designation,
+            'email'=>$request->Email,
+            'paddress'=>$request->Permanent_Address,
+            'caddress'=>$request->Current_Address,
+            'Image'=>$image_name,
+ 
+        ]);
+        return redirect()->route('staff.staffList');
+     }
 
    
 }

@@ -27,21 +27,25 @@
     
   
  
-    <div class="container mt-5">
-      <div class="row tm-content-row">
-        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 tm-block-col">
-          <div class="tm-bg-primary-dark tm-block tm-block-products">
+    <div class="mt-5" style="margin-right: 30px; margin-left: 30px;">
+     
+             <div class="col-lg-12">
+                 <div class="">
        
 
-           @yield('content')
-            </div>
-            </div>
-            </div>
+                      @yield('content')
 
 
+                 </div>
+              </div>
+      
+
+
+    </div>
+ 
 </div>
-        
-</div>
+
+
  
 
     <script src="{{url('js/jquery-3.3.1.min.js')}}"></script>
@@ -79,5 +83,7 @@
         })
     </script>
 </body>
+
 @include('admin.fixed.footer')
+
 </html>

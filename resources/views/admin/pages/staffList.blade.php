@@ -10,8 +10,7 @@
       <th scope="col">Permanent_Address</th>
       <th scope="col">Current_Address</th>
       <th scope="col">Staff_Image</th>
-      <!-- <th scope="col">Description</th>
-      <th scope="col">Handle</th> -->
+      <th scope="col">Handle</th>
       
     </tr>
 </thead>
@@ -26,6 +25,12 @@
       <td>{{$staff->caddress}}</td>
       <td>
         <img width="100px" src="{{url('/uploads/'.$staff->Image)}}" alt="">
+      </td>
+      <td> 
+        <div style="display: flex;">
+       <div style="padding-right: 10px;"><a class="btn btn-light" style="color: rgb(228, 11, 11)" href="{{route('admin.staff.delete',$staff->id)}}">Delete</a></div>
+        <div style="padding-right: 10px;"><a class="btn btn-light" style="color: rgb(32, 77, 51)" href="{{route('admin.staff.edit',$staff->id)}}">Edit</a></div>
+        </div>
       </td>
     </tr>
     @endforeach

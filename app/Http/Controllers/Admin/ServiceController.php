@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Service;
+use App\Models\User;
 use App\Models\Photography;
 use App\Models\Type;
 
@@ -12,13 +13,15 @@ class ServiceController extends Controller
 { //typetable
     public function TypeTable()
     {
+        
         return view('admin.pages.service.AddType');
     }
 
     public function TypeList()
     {
+        $user=User::all();
         $types = Type::all();
-        return view('admin.pages.service.TypeList',compact('types'));
+        return view('admin.pages.service.TypeList',compact('types','user'));
     }
 
     public function TypeStore(Request $request)
@@ -34,15 +37,15 @@ class ServiceController extends Controller
     
 
     //service Table
-    public function decorationadd()
+    public function Serviceadd()
     { $types=Type::all();
         return view('admin.pages.service.servicetable',compact('types'));
     }
-    public function decorationlist()
+    public function Servicelist()
     {   $services = Service::all();
         return view('admin.pages.service.servicelist',compact('services'));
     }
-    public function decorationstore(Request $request)
+    public function Servicestore(Request $request)
     {   $decorimage='';
         if ($request->hasfile('Imagefile')) {
             $file=$request->file('Imagefile');
@@ -56,6 +59,7 @@ class ServiceController extends Controller
             'type_id'=>$request->TypeId,
              'name' =>$request->ServiceName,
              'description'=>$request->ServiceDescription,
+             'eventtype'=>$request->Eventname,
              'price'=>$request->ServicePrice,
              'status'=>$request->ServiceCode,
             'image'=>$decorimage,
@@ -72,55 +76,56 @@ class ServiceController extends Controller
     public function editcatering($service_id)
     {
        $servicedit=Service::find($service_id);
-        return view('admin.pages.service.cateringedit',compact('servicedit'));
+       $types=Type::all();
+
+        return view('admin.pages.service.cateringedit',compact('servicedit','types'));
+    }
+
+    public function updateCatering(Request $request,$service_id)
+    {
+       $serviceupadate=Service::find($service_id);
+       $image_name=$serviceupadate->image;
+       //              step 1: check image exist in this request.
+               if($request->hasFile('Imagefile'))
+               {
+                   // step 2: generate file name
+                   $image_name=date('Ymdhis') .'.'. $request->file('Imagefile')->getClientOriginalExtension();
+       
+                   //step 3 : store into project directory
+       
+                   $request->file('Imagefile')->storeAs('/uploads',$image_name);
+       
+               }
+       
+       $serviceupadate->update([
+        'type_id'=>$request->TypeId,
+        'name' =>$request->ServiceName,
+        'description'=>$request->ServiceDescription,
+        'price'=>$request->ServicePrice,
+        'image'=>$image_name,
+
+       ]);
+       return redirect()->route('admin.service.decorationlist');
     }
     public function deletecatering($service_id){
         Service::find($service_id)->delete();
         return redirect()->back();
         }
-    public function Caterings($service_id)
+    public function Servecing($service_id)
     {
+        if(auth()->user()){
+        $user=User::where('id',auth()->user()->id)->first();
         // dd($service_id);
         $service =Service::where('type_id',$service_id)->get();
         // dd($service);
         $types =Type::all();
-        return view('website.pages.service.catering',compact('service','types'));
-    }
-    //photoghraphy
-    public function photographyadd()
-    {
-        return view('admin.pages.service.photographyadd');
-    }
-
-    public function photographylist()
-    {    $photos = Photography::all();
-        return view('admin.pages.service.photographylist',compact('photos'));
-    }
-
-    public function photostore(Request $request)
-    { 
-        $photoimage='';
-        if ($request->hasfile('Imagefile')) {
-            $file=$request->file('Imagefile');
-            $photoimage=date('Ymdhms').'.'.$file->getClientOriginalExtension();
-            // dd($staffimage);
-            $file->storeAs('/uploads', $photoimage);
+        return view('website.pages.service.serviceshow',compact('service','types','user'));
         }
-       // dd($request->all());
-       Photography::create([
-         
-        'albumname'=>$request->AlbumName,
-        'photographername'=>$request->Photographername,
-        'imagedescreption'=>$request->Picturedescription,
-        'photographycost'=>$request->Photographycost,
-        'albumimage'=>$photoimage,
-
-       ]);
-       return redirect()->back();
+        $user=User::all();
+        // dd($service_id);
+        $service =Service::where('type_id',$service_id)->get();
+        // dd($service);
+        $types =Type::all();
+        return view('website.pages.service.serviceshow',compact('service','types','user'));
     }
-    public function Photograph()
-    {   $photos = Photography::all();
-        return view('website.pages.service.photography',compact('photos'));
-    }
-    
 }
